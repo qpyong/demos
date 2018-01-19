@@ -59,7 +59,7 @@ public class ArrayAlgorithm {
 		int down = num - 1;// 行号，从下到上；对于同一行，从左到右计算
 		int right = num - 1;// 列号，从右到左；对同一列，从下到上计算
 		int up = 0;// 行号，从上到下；对同一行，从右到左
-		int round = (int) Math.ceil(num / 2);// 终点
+		int round = (int) Math.ceil(num / 2);// 最多需要计算多少轮
 		int index = 0;
 		while (index++ <= round) {
 			// 左
