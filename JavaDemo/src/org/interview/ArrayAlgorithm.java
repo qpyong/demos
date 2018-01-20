@@ -15,7 +15,7 @@ public class ArrayAlgorithm {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int[][] array = getArray(6);
+		int[][] array = getArray(9);
 		printlnArray(array);
 	}
 	
@@ -23,6 +23,8 @@ public class ArrayAlgorithm {
 	 * @param array
 	 */
 	private static void printlnArray(int[][] array) {
+		if (array == null)
+			return;
 		for (int[] arr : array) {
 			for (int item : arr) {
 				System.out.print(item < 10 ? "0" + item : item);
@@ -49,7 +51,7 @@ public class ArrayAlgorithm {
 	 * </ol>
 	 * 对于当前元素array[i][j]，如果已计算过（值>0）则忽略不做计算；否则将上一个单元的值递增作为本单元的值。
 	 * @param num
-	 * @return
+	 * @return 二维<code>num</code>元数组；如果参数为小于2的整数，返回null
 	 */
 	private static int[][] getArray(int num) {
 		if (num <= 1)
