@@ -14,11 +14,11 @@ public class Producer {
 		ConnectionFactory f = new ActiveMQConnectionFactory("admin", "admin", "tcp://127.0.0.1:61616");
 		Connection con = f.createConnection();
 		con.start();
-		Session session = con.createSession(false, Session.AUTO_ACKNOWLEDGE);
+		Session session = con.createSession(true, Session.AUTO_ACKNOWLEDGE);
 		Destination des = session.createQueue("test1");
 		MessageProducer produce = session.createProducer(des);
 		for (int i = 0; i < 20; i++) {
-			produce.send(session.createTextMessage("测试消息队列的传输::"+i));
+			produce.send(session.createTextMessage("测试消息队列的传输::" + i));
 		}
 		produce.send(session.createTextMessage("close"));
 		con.close();
