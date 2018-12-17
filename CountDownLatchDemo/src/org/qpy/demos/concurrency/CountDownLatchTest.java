@@ -34,7 +34,7 @@ public class CountDownLatchTest
 	public static void main(String[] args)
 	{
 		long start = System.currentTimeMillis();
-		executeInThread(10);
+		executeInThread(10000000);
 		System.out.println("结果如下：");
 		System.out.println("总共耗时" + (System.currentTimeMillis() - start) + "ms");
 	}
